@@ -1,0 +1,17 @@
+version: '3'
+services:
+  notebook:
+    container_name: MLOps
+    image: jupyter/tensorflow-notebook
+    #build: .
+    #  context: ./scienceData
+    ports: 
+      - "8888:8888"
+      - "8000:8000"
+    environment:
+      - USERNAME=mlops
+      - PASSWORD=12345
+      
+    volumes:
+      - .:/home/jovyan/work 
+    hostname: localhost
